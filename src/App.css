@@ -9,6 +9,7 @@
   --backgroundColor: #dfe6e9;
   --navBarBorder: #74b9ff;
   --navBar: #0984e3;
+  --gridBarBorder: white;
 }
 
 * {
@@ -25,6 +26,99 @@ html {
 }
 
 .App {}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ABOUT */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#photoTextSplit {
+  display: flex;
+}
+#photo {
+  background-color: purple;
+  width: fit-content;
+  height: fit-content;
+  transform: rotate(5deg);
+  background-color: #00cec9;
+  display: inline;
+  margin-left: 2rem;
+  transition: background-color 0.5s ease-in-out;
+}
+
+#photo:hover {
+  background-color: var(--navBar);
+}
+
+#james {
+  height: 15rem;
+  border: 3px solid var(--navBar);
+  margin: 0.5rem;
+  transform: rotate(-5deg);
+}
+
+.aboutPage p {
+  display: inline-block;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ABOUT GRID */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#gridContainer {
+  display: grid;
+  grid-template-rows: repeat(15, 1.3rem);
+  grid-template-columns: repeat(5, 1fr);
+  grid-row-gap: 0.5rem;
+  text-align: center;
+  align-items: center;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  padding: 1rem;
+  box-shadow: 2px 2px 4px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.proficientBar {
+  background-image: linear-gradient(to right,#50A3E3, #1fe309);
+  border: 1px solid var(--gridBarBorder);
+  height: 100%;
+  border-radius: 0.5rem;
+}
+
+.confidentBar {
+  background-image: linear-gradient(to right,#50A3E3, #e3df09);
+  border: 1px solid var(--gridBarBorder);
+  height: 100%;
+  border-radius: 0.5rem;
+}
+
+.familiarBar {
+  background-image: linear-gradient(to right,#50A3E3, #e38c09);
+  border: 1px solid var(--gridBarBorder);
+  height: 100%;
+  border-radius: 0.5rem;
+}
+
+.gridTextLabel {
+  text-align: start;
+}
+
+.js {grid-area: 2/2/2/6;}
+.css {grid-area: 3/2/3/6;}
+.html {grid-area: 4/2/4/6;}
+.assembly {grid-area: 5/2/5/5;}
+.python {grid-area: 6/2/6/5;}
+.git {grid-area: 7/2/7/5;}
+.linux {grid-area: 8/2/8/5;}
+.react {grid-area: 9/2/9/5;}
+.blender {grid-area: 10/2/10/5;}
+.sql {grid-area: 11/2/11/4;}
+.mongodb {grid-area: 12/2/12/4;}
+.unreal {grid-area: 13/2/13/4;}
+.gimp {grid-area: 14/2/14/4;}
+.cpp {grid-area: 15/2/15/4;}
 
 
 
@@ -109,6 +203,7 @@ html {
 
 a:hover {
   border: 1px solid white;
+  transition-duration: 0.3s;
 }
 
 /* White background behind the navbar */
