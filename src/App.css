@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+:root {
+  --path: 5% 1%, 97% 20%, 99% 50%, 1% 98%;
+  --border: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body,
+html {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App {}
+
+.navbar {
+  color: white;
+  width: 95%;
+  margin: 0 auto;
+  border: 3px solid purple;
+
+  /* pos: relative needed for child absolute */
+  position: relative;
+}
+
+
+/* polygon shape  */
+.poly {
+
+  /* Citation: https://css-tricks.com/exploring-the-css-paint-api-polygon-border/ */
+
+
+  height: 12rem;
+  width: 100%;
+  background-color: blue;
+
+  clip-path: polygon(var(--path));
+
+  position: absolute;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  padding: 0 10rem 3rem 5rem;
+  z-index: 2;
+
+}
+
+.polyBorder {
+  /* --path2: 4% 0, 98% 18%, 100% 51%, 0 100%; */
+
+  background-color: green;
+  height: 12rem;
+  width: 100%;
+
+  position: absolute;
+  z-index: 1;
+  /* clip-path: polygon(var(--path2)); */
+}
+
+.navbar a {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* White background behind the navbar */
+.navbarBackground {
+  background-color: gray;
+  width: 90%;
+  height: 12rem;
+  margin: 5rem auto 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Links */
+.linkComponents {
+  display: flex;
+  justify-content: space-around;
+  width: 30rem;
 }

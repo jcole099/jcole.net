@@ -1,5 +1,6 @@
 //Dependencies
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 //Pages
@@ -11,7 +12,15 @@ import Links from './pages/Links.js';
 import Projects from './pages/Projects.js';
 import Skills from './pages/Skills.js';
 
+//JS
+import polyDraw from './js/polyDraw.js';
+
+// window.addEventListener('resize', polyDraw());
+
 function App() {
+  useEffect(() => {
+    polyDraw(3);
+  });
   return (
     <div className="App">
       <Navbar />
@@ -22,10 +31,8 @@ function App() {
         <Route path="projects" element={<Projects />} />
         <Route path="skills" element={<Skills />} />
       </Routes>
-
     </div>
   );
 }
 
 export default App;
-
