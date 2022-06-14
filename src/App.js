@@ -15,12 +15,13 @@ import Skills from './pages/Skills.js';
 //JS
 import polyDraw from './js/polyDraw.js';
 
-// window.addEventListener('resize', polyDraw());
-
 function App() {
   useEffect(() => {
-    polyDraw(3);
-  });
+    polyDraw(3); //calls on first mount
+    window.addEventListener('resize', () => {
+      polyDraw(3); //calls on resize
+    });
+  }, []);
   return (
     <div className="App">
       <Navbar />

@@ -13,7 +13,6 @@ function polyDraw(borderWidth) {
   let points = polyGrid.replace(/,/g, '');
   points = points.replace(/%/g, '');
   points = points.split(' ');
-  console.log(points);
 
   let p1w, p1h, p2w, p2h, p3w, p3h, p4w, p4h;
   p1w = Math.round((parseInt(points[0]) / 100) * polyWidth) - borderWidth;

@@ -7,7 +7,8 @@ function Navbar() {
       <div className="polyBorder" id="polyBorder"></div>
 
       <div className="poly" id="poly">
-        <div>
+        <div className="introName">
+          <span>Hi, my name is</span>
           <h1>James Cole</h1>
         </div>
         <div className="linkComponents">

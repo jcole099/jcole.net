@@ -1,6 +1,14 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* GLOBAL */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 :root {
-  --path: 5% 1%, 97% 20%, 99% 50%, 1% 98%;
-  --border: 5px;
+  --path: 5% 1%, 99% 20%, 97% 60%, 1% 98%;
+  --windowWidth: 1000px;
+  --contentColor: #b2bec3;
+  --contentBorder: #636e72;
+  --backgroundColor: #dfe6e9;
+  --navBarBorder: #74b9ff;
+  --navBar: #0984e3;
 }
 
 * {
@@ -12,65 +20,105 @@ html {
   font-size: 16px;
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: var(--backgroundColor);
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {}
 
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* PAGES */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.aboutPage, .skillsPage, .projectsPage, .linksPage, .contactPage {
+  background-color: var(--contentColor);
+  border: 2px solid var(--contentBorder);
+  width: 85vw;
+  margin: 0 auto 2rem;
+  padding: 14rem 2rem 2rem;
+}
+
+.aboutPage h1, .skillsPage h1, .projectsPage h1, .linksPage h1, .contactPage h1 { 
+  padding: 0;
+  margin: 0;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* NAVBAR */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .navbar {
   color: white;
-  width: 95%;
-  margin: 0 auto;
-  border: 3px solid purple;
-
+  width: 95vw;
+  /* margin: 0 auto; */
+  margin: 1rem auto 0px;
   /* pos: relative needed for child absolute */
   position: relative;
+  
+}
+
+.navbar h1 {
+  font-size: 4rem;
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+  padding: 0 0 0 2rem;
+  text-shadow: 2px 2px 6px black;
+}
+
+.navbar span {
+  margin: 0;
+  padding: 0;
 }
 
 
 /* polygon shape  */
 .poly {
-
-  /* Citation: https://css-tricks.com/exploring-the-css-paint-api-polygon-border/ */
-
-
   height: 12rem;
   width: 100%;
-  background-color: blue;
-
+  background-color: var(--navBar);
   clip-path: polygon(var(--path));
-
+  margin: 0 auto;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10rem 3rem 5rem;
-  z-index: 2;
-
+  z-index: 3;
 }
 
 .polyBorder {
-  /* --path2: 4% 0, 98% 18%, 100% 51%, 0 100%; */
-
-  background-color: green;
+  background-color: var(--navBarBorder);
   height: 12rem;
   width: 100%;
-
   position: absolute;
-  z-index: 1;
-  /* clip-path: polygon(var(--path2)); */
+  z-index: 2;
 }
 
 .navbar a {
   color: white;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  border-right: 1px solid rgba(255,255,255, 0);
+  border-left: 1px solid rgba(255,255,255, 0);
+  padding: 4px;
+  border-radius: 5px;
+}
+
+a:hover {
+  border: 1px solid white;
 }
 
 /* White background behind the navbar */
 .navbarBackground {
-  background-color: gray;
-  width: 90%;
-  height: 12rem;
-  margin: 5rem auto 0;
+  background-color: var(--backgroundColor);
+  width: 100vw;
+  height: 6rem;
+  position: absolute;
+  top: 0;
+  z-index: 1;
 }
 
 /* Links */
@@ -78,4 +126,13 @@ html {
   display: flex;
   justify-content: space-around;
   width: 30rem;
+  margin-top: 2rem;
+}
+
+.introName {
+  /* border: 5px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  margin-top: 2rem;
 }
