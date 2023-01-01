@@ -1,1 +1,0 @@
-# JCOLE.NET Portfolio Website
