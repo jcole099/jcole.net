@@ -1,0 +1,177 @@
+/* font-family: 'Open Sans', sans-serif; */
+/* font-family: 'Saira Extra Condensed', sans-serif; */
+/* font-family: 'Saira', sans-serif; */
+
+:root {
+    --jcOrange: rgb(255, 61, 0);
+    --jcDirtyWhite: rgb(216, 189, 181);
+    --jcWhite: rgb(255,255,255);
+    --jcDarkGray: rgb(65, 65, 65);
+    --jcLightGray: rgb(113, 113, 113);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+h1 {
+    font-size: 5rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+}
+h2 {
+    font-size: 2rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+}
+h3 {
+    font-size: 1.5rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+}
+
+ul {
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.icons {
+    margin-left: 25px;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+.icons a {
+    text-decoration: none;
+}
+.icons i {
+    color: var(--jcLightGray);
+}
+.icons i:hover {
+    color: var(--jcOrange);
+    transition: color 0.2s;
+}
+
+/* ######################################################## */
+/* ######################################################## */
+/* ######################################################## */
+
+
+
+/* ///////////////////////////////////////////// */
+/* NAVIGATION */
+/* ///////////////////////////////////////////// */
+.navBar {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight:500;
+    font-size: 3rem;
+    background-color: var(--jcOrange);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+}
+
+.navBar a {
+    color: var(--jcDirtyWhite);
+    text-decoration: none;
+}
+
+.navBar a:hover {
+    color: var(--jcWhite);
+    transition: color 0.2s;
+}
+
+
+/* ///////////////////////////////////////////// */
+/* ARTICLE */
+/* ///////////////////////////////////////////// */
+.article {
+    margin-left: 250px;
+    width: 70%;
+}
+
+/* ///////////////////////////////////////////// */
+/* ABOUT */
+/* ///////////////////////////////////////////// */
+.about {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    color: var(--jcDarkGray);
+}
+
+.myName {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.myName h1 {
+    margin-bottom: -35px;
+}
+
+.lastName {
+    color: var(--jcOrange);
+}
+
+.aboutSubTitle {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 500;
+}
+
+.aboutSubTitle a {
+    color: var(--jcOrange);
+    text-decoration: none;
+}
+
+.cityState {
+    color: var(--jcLightGray);
+}
+
+.articleText {
+    color: var(--jcLightGray);
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 50px;
+}
+
+
+
+/* ///////////////////////////////////////////// */
+/* PROJECTS */
+/* ///////////////////////////////////////////// */
+
+.projects {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    color: var(--jcLightGray);
+    min-height: 100vh;
+    border-top: 1px solid red;
+}
+
+.projects h1 {
+    color: var(--jcDarkGray);
+}
+
+.eachProject {
+    margin-top: 50px;
+}
