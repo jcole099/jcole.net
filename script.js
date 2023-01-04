@@ -6,7 +6,7 @@ let navBar = document.getElementById('navBar');
 let openIcon = document.getElementById('menuOpen');
 let closeIcon = document.getElementById('menuClose');
 function mobileMenu() {
-	if (window.innerWidth >= 775) return; //Dont perform any adjustments if the regular navbar is clicked.
+	if (window.innerWidth >= 930) return; //Dont perform any adjustments if the regular navbar is clicked.
 	navBar.classList.toggle('nav--open');
 	if (menuOpen) {
 		// CLOSE THE MENU
