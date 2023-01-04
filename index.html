@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
+    <!-- Critical responsive web design meta tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Critical responsive web design meta tag -->
     <meta name="description" content="James Cole's Portfolio" />
     <meta name="author" content="James Cole" />
     <title>James Cole | Software Engineer</title>
@@ -15,55 +17,84 @@
     <script src="https://kit.fontawesome.com/801bd4ce05.js" crossorigin="anonymous"></script>
     <!-- Custom style sheet -->
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="queries.css">
+    
 </head>
-<body>
-<div class="main">
-    <div class="navBar">
-        <a href="#">ABOUT</a>
-        <a href="#projects">PROJECTS</a>
-        <a href="#">SKILLS</a>
-    </div>
-    <div class="article">
-        <div class="about">
+<body onload="setNavAboutToActive()">
+    <nav class="navBar" id="navBar">
+        <img src="/img/jamesAvatar2.png" class="avatar">
+        <div class="navBarMyName">
+            <h2>James Cole</h2>
+        </div>
+        <div class="navBarLinks">
+            <a href="#about" class="navAbout" onclick="mobileMenu()">ABOUT</a>
+            <a href="#projects" class="navProjects" onclick="mobileMenu()">PROJECTS</a>
+            <a href="#skills" class="navSkills" onclick="mobileMenu()">SKILLS</a>
+            <a href="#hobbies" class="navHobbies" onclick="mobileMenu()">HOBBIES</a>
+        </div>
+        <div class="mobileBox">
+            <button class="buttonMobileNav" onclick="mobileMenu()">
+                <i id="menuOpen" name="menuOpen" class="fa-solid fa-bars"></i>
+                <i id="menuClose" name="menuClose" class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </nav>
+    <main class="article">
+        <!-- ABOUT ME -->
+        <section class="about" id="about">
             <a id="about"></a>
             <div class="myName">
-                <h1>JAMES <span class="lastName">COLE</span></h1>
+                <h1><span class="firstName">JAMES</span> <span class="lastName">COLE</span></h1>
             </div>
             <div class="aboutSubTitle">
                 <h2>SOFTWARE ENGINEER</h2>
-                <h3><span class="cityState">TILLAMOOK, OR - </span><a href="mailto:jcole099@hotmail.com">JCOLE099@HOTMAIL.COM</a></h3>
+                <h3><span class="cityState">TILLAMOOK, OR - </span><a href="mailto:james@jcole.net">JAMES@JCOLE.NET</a></h3>
             </div>
-            <div class="articleText">
+            <div class="aboutText">
                 <br>
-                <p>I'm a Pacific Northwest native who is as passionate about playing outside in the rain as I am with software development.</p>
+                <p>I'm a Pacific Northwest (US) native who is as passionate about playing outside in the rain as I am with software development.</p>
+                <br>
+                <br>
+                <p><a href="/files/James_Cole_Resume.pdf">View resume in PDF</a></p>
             </div>
             <div class="icons">
-                <a href="https://github.com/jcole099"><i class="devicon-github-original-wordmark"></a></i>
-                <a href="https://github.com/jcole099"><i class="devicon-linkedin-plain"></i></i></a></i>
-            </div>
-        </div>
-        <div class="projects">
-            <a id="projects"></a>
-            <h1>PROJECTS</h1>
-            <div class="eachProject">
-                <h2>GreenTree Vet Clinic</h2>
-                <p>A full-stack database application that records information at a small veterinary clinic.</p>
-                <ul>
-                    <li>MySQL</li>
-                    <li>JavaScript</li>
-                    <li>Handlebars</li>
-                    <li>Express</li>
-                </ul>
-                <div class="icons">
-                    <a href="https://github.com/jcole099"><i class="devicon-github-original-wordmark"></a></i>
-                    <a href="https://greentree.jcole.net/"><i class="fa-solid fa-link"></i></a>
+                <div class="icon">
+                    <a href="https://github.com/jcole099"><i class="devicon-github-original"></i></a></i>
+                </div>
+                <div class="icon">
+                    <a href="https://github.com/jcole099"><i class="devicon-linkedin-plain"></i></i></a></i>
                 </div>
             </div>
+        </section>
+        <section class="projects" id="projects">
+            <h1>PROJECTS</h1>
+            <!-- GREEN TREE -->
+            <div class="eachProject">
+                <h2>GreenTree Vet Clinic</h2>
+                <p>A MySQL database application that records information at a small veterinary clinic through a website interface.</p>
+                <ul>
+                    <li>MySQL</li>
+                    <li>Node JS</li>
+                    <li>Handlebars</li>
+                    <li>Express</li>
+                    <li>HTML, CSS, JavaScript</li>
+                </ul>
+                <div class="icons">
+                    <div class="icon">
+                        <a href="https://github.com/jcole099"><i class="devicon-github-original"></i></a></i>
+                    </div>
+                    <div class="iconL">
+                        <a href="https://greentree.jcole.net/"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DISCORD FIGHT LEAGUE -->
             <div class="eachProject">
                 <h2>Discord Fight League</h2>
-                <p>A social competitive mixed martial arts league that allows users to 
-                    place fantasy bets through the Discord chat service API. Users compete 
-                    against each other in a league environment.</p>
+                <p>A MongoDB database application that records and displays information through the Discord chat service
+                    API as well as on a website. Discord Fight League is a social competitive mixed martial arts league that allows players to 
+                    place fantasy bets and compete with other players.</p>
                 <ul>
                     <li>MongoDB</li>
                     <li>Mongoose JS</li>
@@ -72,57 +103,295 @@
                     <li>Discord JS</li>
                     <li>Express</li>
                     <li>Node JS</li>
+                    <li>HTML, CSS, JavaScript</li>
                 </ul>
                 <div class="icons">
-                    <a href="https://github.com/jcole099"><i class="devicon-github-original-wordmark"></a></i>
-                    <a href="https://discordfightleague.com"><i class="fa-solid fa-link"></i></a>
+                    <div class="icon">
+                        <a href="https://github.com/jcole099"><i class="devicon-github-original"></i></a></i>
+                    </div>
+                    <div class="iconL">
+                        <a href="https://greentree.jcole.net/"><i class="fa-solid fa-link"></i></a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Infix Postfix Machine -->
             <div class="eachProject">
-                <h2>GreenTree Vet Clinic</h2>
-                <p>A full-stack database application that records information at a small veterinary clinic.</p>
+                <h2>Infix Postfix Machine</h2>
+                <p>A React application that calculates a user provided postfix expression, converts postfix to infix, and converts infix to postfix.
+                    The application also demonstrates a step-by-step calculation/conversion process to facilitate learning.
+                </p>
                 <ul>
-                    <li>MySQL</li>
-                    <li>JavaScript</li>
-                    <li>Handlebars</li>
-                    <li>Express</li>
+                    <li>React JS</li>
+                    <li>HTML, CSS, JavaScript</li>
                 </ul>
                 <div class="icons">
-                    <a href="https://github.com/jcole099"><i class="devicon-github-original-wordmark"></a></i>
-                    <a href="https://greentree.jcole.net/"><i class="fa-solid fa-link"></i></a>
+                    <div class="icon">
+                        <a href="https://github.com/jcole099"><i class="devicon-github-original"></i></a></i>
+                    </div>
+                    <div class="iconL">
+                        <a href="https://greentree.jcole.net/"><i class="fa-solid fa-link"></i></a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Low-level I/O Procedures -->
             <div class="eachProject">
-                <h2>GreenTree Vet Clinic</h2>
-                <p>A full-stack database application that records information at a small veterinary clinic.</p>
+                <h2>Low-level I/O Procedures</h2>
+                <p>An Assembly program that receives ten signed integers from the user, validates the user input, and performs some computations.
+                </p>
                 <ul>
-                    <li>MySQL</li>
-                    <li>JavaScript</li>
-                    <li>Handlebars</li>
-                    <li>Express</li>
+                    <li>Assembly (MASM)</li>
                 </ul>
                 <div class="icons">
-                    <a href="https://github.com/jcole099"><i class="devicon-github-original-wordmark"></a></i>
-                    <a href="https://greentree.jcole.net/"><i class="fa-solid fa-link"></i></a>
+                    <div class="icon">
+                        <a href="https://github.com/jcole099"><i class="devicon-github-original"></i></a></i>
+                    </div>
+                    <div class="iconL">
+                        <a href="https://greentree.jcole.net/"><i class="fa-sharp fa-solid fa-download"></i></a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Tillamook Minecraft -->
             <div class="eachProject">
-                <h2>GreenTree Vet Clinic</h2>
-                <p>A full-stack database application that records information at a small veterinary clinic.</p>
+                <h2>Tillamook Minecraft</h2>
+                <p>A website and locally hosted Minecraft server with custom server plugins.</p>
                 <ul>
-                    <li>MySQL</li>
-                    <li>JavaScript</li>
-                    <li>Handlebars</li>
-                    <li>Express</li>
+                    <li>Apache</li>
+                    <li>Bash</li>
+                    <li>HTML, CSS, JavaScript</li>
                 </ul>
                 <div class="icons">
-                    <a href="https://github.com/jcole099"><i class="devicon-github-original-wordmark"></a></i>
-                    <a href="https://greentree.jcole.net/"><i class="fa-solid fa-link"></i></a>
+                    <div class="icon">
+                        <a href="https://github.com/jcole099"><i class="devicon-github-original"></i></a></i>
+                    </div>
+                    <div class="iconL">
+                        <a href="https://tillamookminecraft.com/"><i class="fa-solid fa-link"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="skills"></div>
-    </div>
-</div>
+
+            <!-- Game Modding -->
+            <div class="eachProject">
+                <h2>Game Modding</h2>
+                <p>A dozen different game mods for a popular video game - each mod receiving hundreds of thousands of downloads.</p>
+                <ul>
+                    <li>Blender (3d Modeling)</li>
+                    <li>Unreal Engine</li>
+                    <li>GIMP (Image Editing)</li>
+                    <li>Lightworks (Video Editing)</li>
+                </ul>
+                <div class="icons">
+                    <div class="icon">
+                        <a href="https://www.youtube.com/watch?v=fknRM0Eodvg"><i class="fa-brands fa-youtube"></i></a></i>
+                    </div>
+                    <div class="iconL">
+                        <a href="https://steamcommunity.com/id/dmc8217/myworkshopfiles/?appid=252950"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <section class="skills" id="skills">
+            <h1>SKILLS</h1>
+            <div class="skillsGrid">
+                <div class="technologyName n1"><p>JavaScript</p></div>
+                <div class="technologyName n2"><p>HTML</p></div>
+                <div class="technologyName n3"><p>CSS</p></div>
+                <div class="technologyName n4"><p>React JS</p></div>
+                <div class="technologyName n5"><p>Git</p></div>
+                <div class="technologyName n6"><p>MongoDB</p></div>
+                <div class="technologyName n7"><p>SQL</p></div>
+                <div class="technologyName n8"><p>Python</p></div>
+                <div class="technologyName n9"><p>C</p></div>
+                <div class="technologyName n10"><p>C++</p></div>
+                <div class="technologyName n11"><p>Assembly</p></div>
+                <div class="technologyName n12"><p>Express JS</p></div>
+                
+                <div class="bar b1"></div>
+                <div class="bar b2"></div>
+                <div class="bar b3"></div>
+                <div class="bar b4"></div>
+                <div class="bar b5"></div>
+                <div class="bar b6"></div>
+                <div class="bar b7"></div>
+                <div class="bar b8"></div>
+                <div class="bar b9"></div>
+                <div class="bar b10"></div>
+                <div class="bar b11"></div>
+                <div class="bar b12"></div>
+            </div>
+        </section>
+        <section class="hobbies" id="hobbies">
+            <h1>HOBBIES</h1>
+            <div class="carousel">
+                <!-- HOME IMPROVEMENT -->
+                <div class="slide">
+                    <img src="/img/homeimprovement.png" alt="Home Improvement" class="hobbiesImages">
+                    <div class="descriptionBox">
+                        <h2>Home Improvement</h2>
+                        <blockquote>
+                            <p class="hobbiesDescription">Home improvement for me, is a lot like learning CS technologies. 
+                                I educate myself on a task ahead, attempt to implement it, and learn from experience. This particular 
+                            image was taken at the start of a month-long attic project.</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- RUNNING -->
+                <div class="slide">
+                    <img src="/img/running.jpg" alt="Running" class="hobbiesImages">
+                    <div class="descriptionBox">
+                        <h2>Running</h2>
+                        <blockquote>
+                            <p class="hobbiesDescription">Running allows me to view the world from a different perspective. I also enjoy running as a 
+                                meditative practice. I have completed a few half-marathons and am looking forward to my eventual attendance at a 
+                                full marathon event.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- CODING -->
+                <div class="slide">
+                    <img src="/img/coding.png" alt="Coding" class="hobbiesImages">
+                    <div class="descriptionBox">
+                        <h2>Coding</h2>
+                        <blockquote>
+                            <p class="hobbiesDescription">I enjoy learning new languages and technologies. The more familiar I become with a 
+                                technology, the more fun I have with it. For me, A challenging coding project can have an 
+                                equivalent fun factor as a great video game. Coding is a fun activity and I love being able to produce a 
+                                finished product.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- XC SKIING -->
+                <div class="slide">
+                    <img src="/img/skiing.jpg" alt="XC Skiing" class="hobbiesImages">
+                    <div class="descriptionBox">
+                        <h2>XC Skiing</h2>
+                        <blockquote>
+                            <p class="hobbiesDescription">When there is too much snow on the ground for winter hiking, I enjoy clipping into my cross 
+                                country skis and exploring the winter wonderland of the Cascade Mountain Range.</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- CYCLING -->
+                <div class="slide">
+                    <img src="/img/cycling.png" alt="Cycling" class="hobbiesImages">
+                    <div class="descriptionBox">
+                        <h2>Cycling</h2>
+                        <blockquote>
+                            <p class="hobbiesDescription">The smooth gliding movement of riding a bike slows down time and helps me to appreciate 
+                                the smaller things in life. Riding a bicycle always takes me back to the carefree summer days of my childhood - I absolutely love it.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- HIKING -->
+                <div class="slide">
+                    <img src="/img/hiking.png" alt="Hiking" class="hobbiesImages">
+                    <div class="descriptionBox">
+                        <h2>Hiking</h2>
+                        <blockquote>
+                            <p class="hobbiesDescription">Hiking is an important aspect of my life, and allows me to spiritually rebalance. I make 
+                                a point of hiking all of the popular trails wherever I live at least once annually.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- GAMING -->
+                <div class="slide">
+                    <img src="/img/gaming.png" alt="Gaming" class="hobbiesImages">
+                    <div class="descriptionBox">
+                        <h2>Gaming</h2>
+                        <blockquote>
+                            <p class="hobbiesDescription">Some days I enjoy being inside my warm home attempting to take down the next boss demon 
+                                in my favorite video game. "Dark Souls" is my favorite video game series. Some of my other favorite game titles include: Subnautica, 
+                                Sekiro, Zelda: Breath of the Wild, Star Wars Jedi: Fallen Order, and Tetris!
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- KAYAKING -->
+                <div class="slide">
+                    <img src="/img/kayaking.png" alt="Kayaking" class="hobbiesImages">
+                    <div class="descriptionBox">
+                        <h2>Kayaking</h2>
+                        <blockquote>
+                            <p class="hobbiesDescription">The Tillamook Bay on the west coast of Oregon offers a multitude of kayaking opportunies. We have five major 
+                                rivers that flow into the bay, which offer many different flatwater kayaking adventures. Blue herons, bald eagles, and harbor seals are commonly seen. Occassionally 
+                                I get lucky and see a river otter on my adventures.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- DISC GOLF -->
+                <div class="slide">
+                    <img src="/img/discgolf.png" alt="Disc Golf" class="hobbiesImages">
+                    <div class="descriptionBox">
+                        <h2>Disc Golf</h2>
+                        <blockquote>
+                            <p class="hobbiesDescription">Disc Golf combines two of my favorite activities: Hiking and frisbee. Sinking a long putt and 
+                                hearing the chains of the basket clank together is an amazing feeling.</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- JIGSAW PUZZLES -->
+                <div class="slide">
+                    <img src="/img/puzzle.jpg" alt="Jigsaw Puzzles" class="hobbiesImages">
+                    <div class="descriptionBox">
+                        <h2>Jigsaw Puzzles</h2>
+                        <blockquote>
+                            <p class="hobbiesDescription">AKA "Yoga for the brain". A quiet and therapeutic practice that helps to calm the soul. I glue/tape all of my completed 
+                                puzzles. I have recently started building my own puzzle frames from wood, and look forward to displaying much of my hard work 
+                                around the house.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- BEACHFUN -->
+                <div class="slide">
+                    <img src="/img/beachfun.png" alt="Beach Fun" class="hobbiesImages">
+                    <div class="descriptionBox">
+                        <h2>Beach Fun</h2>
+                        <blockquote>
+                            <p class="hobbiesDescription">Flying kites, bocce ball, tide pooling, sand castles - I always have a lot of fun on the local beaches 
+                                nearby. I am always careful to supervise any open food, as the seaguls will snatch up anything that isn't nailed down. I once lost 
+                                and entire sandwich to a couple of brazen seaguls!
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+                
+                <button class="carouselButton btn--left" onclick="plusSlides(-1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="carouselButtonIcon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button class="carouselButton  btn--right" onclick="plusSlides(1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="carouselButtonIcon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+                <div class="carouselDots">
+                    <!-- nbsp = Non Breaking Space -->
+                    <button class="carouselDot" onclick="currentSlide(1)">&nbsp;</button>
+                    <button class="carouselDot" onclick="currentSlide(2)">&nbsp;</button>
+                    <button class="carouselDot" onclick="currentSlide(3)">&nbsp;</button>
+                    <button class="carouselDot" onclick="currentSlide(4)">&nbsp;</button>
+                    <button class="carouselDot" onclick="currentSlide(5)">&nbsp;</button>
+                    <button class="carouselDot" onclick="currentSlide(6)">&nbsp;</button>
+                    <button class="carouselDot" onclick="currentSlide(7)">&nbsp;</button>
+                    <button class="carouselDot" onclick="currentSlide(8)">&nbsp;</button>
+                    <button class="carouselDot" onclick="currentSlide(9)">&nbsp;</button>
+                    <button class="carouselDot" onclick="currentSlide(10)">&nbsp;</button>
+                    <button class="carouselDot" onclick="currentSlide(11)">&nbsp;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- JS Script -->
+    <script src="script.js"></script>
 </body>
 </html>

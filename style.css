@@ -4,6 +4,7 @@
 
 :root {
     --jcOrange: rgb(255, 61, 0);
+    --jcLightOrange: rgb(253, 112, 69);
     --jcDirtyWhite: rgb(216, 189, 181);
     --jcWhite: rgb(255,255,255);
     --jcDarkGray: rgb(65, 65, 65);
@@ -16,15 +17,19 @@
     box-sizing: border-box;
 }
 
-body {
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
+html {
+    /* enables web page scrolling when clicking on anchor link */
+    scroll-behavior: smooth; 
+
 }
 
-.main {
+body {
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: row;
 }
+
 h1 {
     font-size: 5rem;
     font-family: 'Saira Extra Condensed', sans-serif;
@@ -43,21 +48,69 @@ ul {
     margin-left: 40px;
 }
 
+section {
+    padding-bottom: 200px;
+}
+
+/* ////////// */
+/* ICONS */
+/* ////////// */
 .icons {
     margin-left: 25px;
-    font-size: 2rem;
     margin-top: 20px;
+    display: flex;
 }
-.icons a {
+.icon {
+    font-size: 1.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--jcOrange);
+    border-radius: 4px;
+    padding-top: 3px;
+}
+.icon a {
     text-decoration: none;
 }
-.icons i {
-    color: var(--jcLightGray);
+.icon i {
+    /* color: var(--jcDirtyWhite); */
+    color: var(--jcWhite);
 }
-.icons i:hover {
-    color: var(--jcOrange);
+.icon i:hover {
+    color: var(--jcWhite);
     transition: color 0.2s;
 }
+.iconL {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--jcOrange);
+    border-radius: 4px;
+}
+.iconL a {
+    text-decoration: none;
+}
+.iconL i {
+    /* color: var(--jcDirtyWhite); */
+    color: var(--jcWhite);
+}
+.iconL i:hover {
+    color: var(--jcWhite);
+    transition: color 0.2s;
+}
+
+a {
+    text-decoration: none;
+    color: var(--jcDirtyWhite);
+}
+
 
 /* ######################################################## */
 /* ######################################################## */
@@ -69,6 +122,7 @@ ul {
 /* NAVIGATION */
 /* ///////////////////////////////////////////// */
 .navBar {
+    
     font-family: 'Saira Extra Condensed', sans-serif;
     font-weight:500;
     font-size: 3rem;
@@ -80,11 +134,14 @@ ul {
     width: 250px;
     height: 100vh;
     position: fixed;
+    z-index: 99;
 }
 
-.navBar a {
-    color: var(--jcDirtyWhite);
-    text-decoration: none;
+.navBarLinks {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }
 
 .navBar a:hover {
@@ -92,26 +149,63 @@ ul {
     transition: color 0.2s;
 }
 
+.avatar {
+    height: 200px;
+    margin-bottom: 40px;
+}
+
+/* Shows what page the user is on, in the nav bar */
+.active {
+    color: var(--jcWhite);
+    text-decoration: underline;
+}
+
+/* ///////////////////////////////////////////// */
+/* MOBILE NAV */
+/* ///////////////////////////////////////////// */
+.buttonMobileNav {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+.buttonMobileNav i[name="menuOpen"] {
+    color: var(--jcWhite);
+    display: none;
+}
+.buttonMobileNav i[name="menuClose"] {
+    color: var(--jcWhite);
+    display: none;
+}
+.navBarMyName {
+    color: var(--jcWhite);
+    display: none;
+}
+
+.mobileBox {
+    display: none;
+}
 
 /* ///////////////////////////////////////////// */
 /* ARTICLE */
 /* ///////////////////////////////////////////// */
 .article {
-    margin-left: 250px;
-    width: 70%;
+    margin-left: 300px;
+    width: 100%;
+    max-width: 1000px;
+    margin-right: 50px;
 }
 
 /* ///////////////////////////////////////////// */
 /* ABOUT */
 /* ///////////////////////////////////////////// */
 .about {
-    margin-left: 50px;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    height: 100vh;
     color: var(--jcDarkGray);
+    min-height: 100vh;
 }
 
 .myName {
@@ -126,11 +220,39 @@ ul {
 .myName h1 {
     margin-bottom: -35px;
 }
+.firstName {
+    z-index: -1;
+    position: relative;
+    animation-name: firstName;
+    animation-duration: 1s;
+}
 
 .lastName {
     color: var(--jcOrange);
+    position: relative;
+    animation-name: lastName;
+    animation-duration: 1s;
 }
 
+@keyframes firstName {
+    from {
+        top: -2000px;
+    }
+    to {
+        top: 0px;
+    }
+}
+@keyframes lastName {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 .aboutSubTitle {
     font-family: 'Saira Extra Condensed', sans-serif;
     font-weight: 500;
@@ -145,10 +267,15 @@ ul {
     color: var(--jcLightGray);
 }
 
-.articleText {
+.aboutText {
     color: var(--jcLightGray);
     font-family: 'Open Sans', sans-serif;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+}
+
+.aboutText a {
+    text-decoration: none;
+    color: var(--jcOrange);
 }
 
 
@@ -158,14 +285,14 @@ ul {
 /* ///////////////////////////////////////////// */
 
 .projects {
-    margin-left: 50px;
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     color: var(--jcLightGray);
     min-height: 100vh;
-    border-top: 1px solid red;
+    border-top: 2px solid var(--jcOrange);
 }
 
 .projects h1 {
@@ -175,3 +302,300 @@ ul {
 .eachProject {
     margin-top: 50px;
 }
+
+/* ///////////////////////////////////////////// */
+/* SKILLS */
+/* ///////////////////////////////////////////// */
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    color: var(--jcLightGray);
+    min-height: 100vh;
+    border-top: 2px solid var(--jcOrange);
+}
+
+.skills h1 {
+    color: var(--jcDarkGray);
+}
+
+/* ///////////////////////////////////////////// */
+/* HOBBIES */
+/* ///////////////////////////////////////////// */
+.hobbies {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    color: var(--jcLightGray);
+    border-top: 2px solid var(--jcOrange);
+}
+
+.hobbies h1 {
+    color: var(--jcDarkGray);
+    padding-bottom: 100px;
+}
+
+/* ////////// */
+/* Carousel */
+/* ////////// */
+.carousel {
+    background-color: var(--jcOrange);
+    width: 100%;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    /* flex centering also acts upon absolutely displayed content */
+    align-items: center;
+    gap: 50px;
+    padding-left: 60px;
+    padding-right: 30px;
+    position: relative;
+    height: 250px;
+    max-height: 250px;
+    z-index: 0;
+}
+
+.hobbiesImages {
+    height: 200px;
+    border-radius: 5px;
+    margin: 20px;
+    border: 2px solid var(--jcDarkGray);
+    transform: scale(1.5);
+    box-shadow: 0 20px 20px rgba(0,0,0,.25);
+}
+
+.carouselButton {
+    background-color: var(--jcWhite);
+    border: none;
+    height: 40px;
+    width: 40px;
+    /* for absolute to work, parent must be set to relative */
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* X offset, Y offset, blur radius, spread radius, color */
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.btn--left {
+    left: 0;
+    /* top attribute is not needed as parent's flex is already aligning, but used for practice */
+    /* top: percentage of parent container's height */
+    top: 50%;
+    /* moves a percentage of itself (x, y) */
+    transform: translate(-50%, -50%);
+}
+.btn--right {
+    right: 0;
+    /* top attribute is not needed as parent's flex is already aligning, but used for practice */
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+.carouselButtonIcon {
+    height: 24px;
+    width: 24px;
+    stroke: var(--jcDarkGray);
+}
+
+.descriptionBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.carouselDots {
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    transform: translate(-50%, 32px);
+    display: flex;
+    gap: 10px;
+}
+.carouselDot {
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--jcDarkGray);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    /* prevent text from touching right button */
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding-right: 15px;
+    /* flex centering also acts upon absolutely displayed content */
+    align-items: center;
+    gap: 50px;
+}
+
+/* This is added to the 'slide' class for the fadeIn effect */
+.slide--fadeIn {
+    opacity: 1;
+    animation: fadeIn 0.25s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.dot--fill, .carouselDot:hover {
+    background-color: var(--jcOrange);
+}
+
+
+
+/* ///////////////////////////////////////////// */
+/* SKILLS GRID */
+/* ///////////////////////////////////////////// */
+
+.skillsGrid {
+    margin-top: 50px;
+    width: 100%;
+    /* border: 2px solid blue; */
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    color: var(--jcDarkGray);
+    /* Set the widths/heights */
+    /* fr = fraction of the parent width */
+    grid-template-columns: 150px repeat(10, 1fr);
+    /* grid-template-columns: repeat(5, 1fr); - equivalent */
+    grid-template-rows: repeat(12, 30px);
+
+    /* space between rows/cols */
+    /* gap: 5px; */
+    /* column-gap: 5px; */
+    row-gap: 10px;
+}
+
+.technologyName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bar {
+    background: linear-gradient(to right, var(--jcLightOrange), var(--jcOrange));
+    
+    border-radius: 10px;
+    height: 15px;
+}
+/* JavaScript */
+.n1 {
+    grid-column: 1 / 2;
+    grid-row: 1/2;
+}
+.b1 {
+    grid-column: 2 / 11;
+    grid-row: 1/2;
+}
+/* HTML */
+.n2 {
+    grid-column: 1 / 2;
+    grid-row: 2/3;
+}
+.b2 {
+    grid-column: 2 / 10;
+    grid-row: 2/3;
+}
+/* CSS */
+.n3 {
+    grid-column: 1 / 2;
+    grid-row: 3/4;
+}
+.b3 {
+    grid-column: 2 / 10;
+    grid-row: 3/4;
+}
+/* React */
+.n4 {
+    grid-column: 1 / 2;
+    grid-row: 4/5;
+}
+.b4 {
+    grid-column: 2 / 8;
+    grid-row: 4/5;
+}
+/* Git */
+.n5 {
+    grid-column: 1 / 2;
+    grid-row: 5/6;
+}
+.b5 {
+    grid-column: 2 / 8;
+    grid-row: 5/6;
+}
+/* MongoDB */
+.n6 {
+    grid-column: 1 / 2;
+    grid-row: 6/7;
+}
+.b6 {
+    grid-column: 2 / 7;
+    grid-row: 6/7;
+}
+/* Python */
+.n7 {
+    grid-column: 1 / 2;
+    grid-row: 7/8;
+}
+.b7 {
+    grid-column: 2 / 7;
+    grid-row: 7/8;
+}
+/* SQL */
+.n8 {
+    grid-column: 1 / 2;
+    grid-row: 8/9;
+}
+.b8 {
+    grid-column: 2 / 7;
+    grid-row: 8/9;
+}
+/* C */
+.n9 {
+    grid-column: 1 / 2;
+    grid-row: 9/10;
+}
+.b9 {
+    grid-column: 2 / 6;
+    grid-row: 9/10;
+}
+/* C++ */
+.n10 {
+    grid-column: 1 / 2;
+    grid-row: 10/11;
+}
+.b10 {
+    grid-column: 2 / 6;
+    grid-row: 10/11;
+}
+/* Assembly */
+.n11 {
+    grid-column: 1 / 2;
+    grid-row: 11/12;
+}
+.b11 {
+    grid-column: 2 / 6;
+    grid-row: 11/12;
+}
+/* Git */
+.n12 {
+    grid-column: 1 / 2;
+    grid-row: 12/13;
+}
+.b12 {
+    grid-column: 2 / 6;
+    grid-row: 12/13;
+}
+
+

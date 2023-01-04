@@ -1,0 +1,171 @@
+
+/* Below 1100px */
+@media (max-width: 1100px) {
+    .navBar {
+        width: 150px;
+        font-size: 2rem;
+        padding-bottom: 175px;
+    }
+    .article {
+        margin-left: 200px;
+    }
+    .avatar {
+        height: 130px;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    .myName h1 {
+        margin-bottom: -20px;
+    }
+    .hobbiesImages {
+        height: 125px;
+    }
+    .carouselDots {
+        bottom: -10px;
+    }
+}
+
+/* Below 900px */
+@media (max-width: 900px) {
+
+    .carousel {
+        padding-left: 35px;
+        padding-right: 20px;
+    }
+    .slide {
+        gap: 25px;
+    }
+}
+
+/* Below 850px */
+@media (max-width: 850px) {
+    .article {
+        margin-right: 30px;
+        margin-left: 180px;
+    }
+}
+
+/* MOBILE NAV */
+/* Below 775px */
+@media (max-width: 775px) {
+    .article {
+        margin-left: 30px;
+    }
+    .navBar {
+        width: 100%;
+        height: 75px;
+        margin-top: 0px;
+        border-bottom: 1px solid var(--jcDarkGray);
+        padding-bottom: 0px;
+    }
+
+    /* CLOSE MENU */
+    .navBarLinks {
+        margin-top: 100px;
+        /* Cannot animate when display = none */
+        /* Hide visually */
+        opacity: 0;
+        /* Unnaccessible to mouse and keyboard */
+        pointer-events: none;
+        /* hide from screen readers */
+        visibility: hidden;
+    }
+
+    /* OPEN MENU */
+    /* We are adding the nav--open class to the parent div (navBar)
+    whenever nav--open is present, the following code will execute.
+    When it is not present, the above block of code will fire.
+    */
+    .mobileBox {
+        display: block;
+    }
+    .nav--open .navBarLinks {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transition: all 0.5s;
+    }
+    .nav--open {
+        height: 400px;
+        transition: height 0.5s;
+    }
+
+
+    /* Closed NavBar appearance */
+    .avatar {
+        display: none;
+    }
+    .buttonMobileNav i[name="menuOpen"] {
+        display: block;
+        position: fixed;
+        right: 40px;
+        top: 15px;
+        padding: 5px;
+        border-radius: 3px;;
+        border: 1px solid var(--jcWhite);
+    }
+    .buttonMobileNav i[name="menuClose"] {
+        display: none;
+        width: 40px;
+        position: fixed;
+        right: 40px;
+        top: 15px;
+        padding: 5px;
+        border-radius: 3px;;
+        border: 1px solid var(--jcWhite);
+    }
+    .navBarMyName {
+        display: block;
+        position: fixed;
+        top: 0px;
+        left: 30px;
+    }
+    .navBarMyName h2 {
+        font-size: 3rem;
+        font-family: 'Saira Extra Condensed', sans-serif;
+    }
+}
+
+
+@media (max-width: 650px) {
+    .hobbiesImages {
+        height: 175px;
+    }
+    .carousel {
+        height: 550px;
+        max-height: 550px;
+    }
+    .slide {
+        flex-direction: column;
+        gap: 60px;
+    }
+    .hobbies {
+        padding-bottom: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .hobbiesImages {
+        height: 150px;
+    }
+    .slide {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .hobbiesImages {
+        height: 125px;
+    }
+    .slide {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+}
