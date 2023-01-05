@@ -12,7 +12,7 @@ Technologies used:
 
 ### Details
 
-Website: [JCOLE.NET](https://jcole.net)
+Website: [JCOLE.NET](https://jcole.net)  
 Author: [James Cole](https://jcole.net)  
 Date: 01/02/23  
 License: None
