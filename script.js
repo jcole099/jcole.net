@@ -82,6 +82,54 @@ function navHighlighter() {
 }
 
 /////////////////////////////////////////////////////
+// SKILLS
+/////////////////////////////////////////////////////
+const skills = [
+    { name: "SQL", level: 90 },
+  { name: "JavaScript", level: 90 }, // Level as percentage (0-100)
+  { name: "HTML", level: 85 },
+  { name: "CSS", level: 85 },
+  { name: "React", level: 70 },
+  { name: "Python", level: 70 },
+  { name: "Git", level: 70 },
+  { name: "MongoDB", level: 60 },
+  { name: "C", level: 50 },
+  { name: "C++", level: 50 },
+  { name: "Assembly", level: 50 }
+];
+
+function generateSkillsGrid() {
+    const skillsGrid = document.getElementById('skills-grid');
+  
+    skills.forEach(skill => {
+        const skillRow = document.createElement('div');
+        skillRow.className = 'skill-row';
+        
+        const nameElement = document.createElement('div');
+        nameElement.className = 'skill-name';
+        nameElement.textContent = skill.name;
+        
+        const barContainer = document.createElement('div');
+        barContainer.className = 'skill-bar-container';
+        
+        const bar = document.createElement('div');
+        bar.className = 'skill-bar';
+        bar.style.width = `${skill.level}%`;
+        
+        barContainer.appendChild(bar);
+        skillRow.appendChild(nameElement);
+        skillRow.appendChild(barContainer);
+        skillsGrid.appendChild(skillRow);
+    });
+}
+
+// Call this when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+  generateSkillsGrid();
+});
+
+
+/////////////////////////////////////////////////////
 // CAROUSEL
 /////////////////////////////////////////////////////
 
@@ -119,3 +167,5 @@ function SlideShow(n) {
 	// Fade in slide
 	slides[slidePosition - 1].className += ' slide--fadeIn';
 }
+
+
